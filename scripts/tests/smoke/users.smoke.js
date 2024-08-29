@@ -33,6 +33,6 @@ export default function () {
 
 export function handleSummary(data) {
   return {
-    "teste_k6.html": htmlReport(data),
+    "index.html": htmlReport(data),
   };
 }
