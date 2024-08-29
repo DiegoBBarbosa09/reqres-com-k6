@@ -3,6 +3,12 @@ import { check } from "k6";
 import { postUsuarios } from "../../payload.js";
 import { getHeaders, getRandomName, getRandomJobs } from "../../utils.js";
 
+export function handleSummary(data) {
+  return {
+    "index.html": htmlReport(data),
+  };
+}
+
 export const options = {
   vus: 1,
   duration: "2s",
@@ -29,10 +35,4 @@ export default function () {
   check(res, {
     "is code 201": (r) => r.status === 201,
   });
-}
-
-export function handleSummary(data) {
-  return {
-    "index.html": htmlReport(data),
-  };
 }
