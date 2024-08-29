@@ -30,3 +30,9 @@ export default function () {
     "is code 201": (r) => r.status === 201,
   });
 }
+
+export function handleSummary(data) {
+  return {
+    "teste_k6.html": htmlReport(data),
+  };
+}
